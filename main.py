@@ -34,7 +34,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 Base.metadata.create_all(bind=engine)
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 app = FastAPI(title="Gelişmiş HCC Erken Teşhis Sistemi API")
-origins = ["http://localhost", "http://localhost:3000"]
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    "https://hcc-web-design-ui.onrender.com"  # <- Render'daki frontend linki buraya!
+]
+
 app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 # --- MODEL ve DOSYA YOLLARI ---
