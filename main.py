@@ -37,7 +37,7 @@ app = FastAPI(title="Gelişmiş HCC Erken Teşhis Sistemi API")
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "https://hcc-web-design-ui.onrender.com"  # <- Render'daki frontend linki buraya!
+    "https://hcc-web-design-1-om2o.onrender.com"  # <- Render'daki frontend linki buraya!
 ]
 
 app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
