@@ -46,9 +46,9 @@ def load_all_llms():
             llm_clients['gemini'] = genai
             print("✅ Gemini Servisi: Yapılandırıldı")
         else:
-            print("⚠️ GEMINI_API_KEY bulunamadı.")
+            print("⚠️ UYARI: api_keys.txt dosyasında GEMINI_API_KEY bulunamadı.")
     except Exception as e:
-        print(f"HATA: Gemini servisi başlatılırken: {e}")
+        print(f"HATA: Gemini servisi başlatılırken bir sorun oluştu: {e}")
 
     # --- Groq Servisini Başlat ---
     try:
@@ -57,23 +57,9 @@ def load_all_llms():
             llm_clients['groq'] = Groq(api_key=GROQ_API_KEY)
             print("✅ Groq Servisi: Yapılandırıldı")
         else:
-            print("⚠️ GROQ_API_KEY bulunamadı.")
+            print("⚠️ UYARI: api_keys.txt dosyasında GROQ_API_KEY bulunamadı.")
     except Exception as e:
-        print(f"HATA: Groq servisi başlatılırken: {e}")
-
-    # --- DeepSeek Servisini Başlat ---
-    try:
-        DEEPSEEK_API_KEY = api_keys.get("DEEPSEEK_API_KEY")
-        if DEEPSEEK_API_KEY:
-            llm_clients['deepseek'] = OpenAI(
-                api_key=DEEPSEEK_API_KEY,
-                base_url="https://api.deepseek.com/v1"
-            )
-            print("✅ DeepSeek Servisi: Yapılandırıldı")
-        else:
-            print("⚠️ DEEPSEEK_API_KEY bulunamadı.")
-    except Exception as e:
-        print(f"HATA: DeepSeek servisi başlatılırken: {e}")
+        print(f"HATA: Groq servisi başlatılırken bir sorun oluştu: {e}")
 
 # ... (Groq servisinin yapılandırma bloğu bittikten sonra)
 
